@@ -8,8 +8,12 @@ import com.matrix.multigpt.data.ModelConstants.googleModels
 import com.matrix.multigpt.data.ModelConstants.groqModels
 import com.matrix.multigpt.data.ModelConstants.ollamaModels
 import com.matrix.multigpt.data.ModelConstants.openaiModels
+import com.matrix.multigpt.data.ModelConstants
+import com.matrix.multigpt.data.dto.ModelFetchResult
+import com.matrix.multigpt.data.dto.ModelInfo
 import com.matrix.multigpt.data.dto.Platform
 import com.matrix.multigpt.data.model.ApiType
+import com.matrix.multigpt.data.network.ModelFetchService
 import com.matrix.multigpt.data.repository.SettingRepository
 import com.matrix.multigpt.presentation.common.Route
 import javax.inject.Inject
@@ -20,7 +24,10 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 @HiltViewModel
-class SetupViewModel @Inject constructor(private val settingRepository: SettingRepository) : ViewModel() {
+class SetupViewModel @Inject constructor(
+    private val settingRepository: SettingRepository,
+    private val modelFetchService: ModelFetchService
+) : ViewModel() {
 
     private val _platformState = MutableStateFlow(
         listOf(
@@ -32,6 +39,12 @@ class SetupViewModel @Inject constructor(private val settingRepository: SettingR
         )
     )
     val platformState: StateFlow<List<Platform>> = _platformState.asStateFlow()
+
+    private val _modelFetchState = MutableStateFlow<Map<ApiType, ModelFetchResult>>(emptyMap())
+    val modelFetchState: StateFlow<Map<ApiType, ModelFetchResult>> = _modelFetchState.asStateFlow()
+
+    private val _fetchedModels = MutableStateFlow<Map<ApiType, List<ModelInfo>>>(emptyMap())
+    val fetchedModels: StateFlow<Map<ApiType, List<ModelInfo>>> = _fetchedModels.asStateFlow()
 
     fun updateAPIAddress(platform: Platform, address: String) {
         val index = _platformState.value.indexOf(platform)
@@ -169,5 +182,33 @@ class SetupViewModel @Inject constructor(private val settingRepository: SettingR
         updateModel(apiType, model)
 
         return model
+    }
+
+    fun fetchModelsForPlatform(apiType: ApiType) {
+        val platform = _platformState.value.find { it.name == apiType } ?: return
+        val apiUrl = platform.apiUrl.ifBlank { ModelConstants.getDefaultAPIUrl(apiType) }
+        val apiKey = platform.token
+
+        viewModelScope.launch {
+            _modelFetchState.update { it + (apiType to ModelFetchResult.Loading) }
+
+            val result = modelFetchService.fetchModels(apiType, apiUrl, apiKey)
+
+            _modelFetchState.update { it + (apiType to result) }
+
+            if (result is ModelFetchResult.Success) {
+                _fetchedModels.update { it + (apiType to result.models) }
+            }
+        }
+    }
+
+    fun getFallbackModels(apiType: ApiType): List<String> {
+        return when (apiType) {
+            ApiType.OPENAI -> openaiModels.toList()
+            ApiType.ANTHROPIC -> anthropicModels.toList()
+            ApiType.GOOGLE -> googleModels.toList()
+            ApiType.GROQ -> groqModels.toList()
+            ApiType.OLLAMA -> ollamaModels.toList()
+        }
     }
 }

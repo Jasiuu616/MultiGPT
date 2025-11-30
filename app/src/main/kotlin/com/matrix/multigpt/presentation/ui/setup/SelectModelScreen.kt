@@ -2,24 +2,32 @@ package com.matrix.multigpt.presentation.ui.setup
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
@@ -36,6 +44,7 @@ import com.matrix.multigpt.data.ModelConstants.googleModels
 import com.matrix.multigpt.data.ModelConstants.groqModels
 import com.matrix.multigpt.data.ModelConstants.openaiModels
 import com.matrix.multigpt.data.dto.APIModel
+import com.matrix.multigpt.data.dto.ModelFetchResult
 import com.matrix.multigpt.data.model.ApiType
 import com.matrix.multigpt.presentation.common.PrimaryLongButton
 import com.matrix.multigpt.presentation.common.RadioItem
@@ -57,13 +66,44 @@ fun SelectModelScreen(
 ) {
     val title = getAPIModelSelectTitle(platformType)
     val description = getAPIModelSelectDescription(platformType)
-    val availableModels = when (platformType) {
+    
+    val modelFetchState by setupViewModel.modelFetchState.collectAsStateWithLifecycle()
+    val fetchedModels by setupViewModel.fetchedModels.collectAsStateWithLifecycle()
+    
+    // Trigger model fetching when screen is displayed
+    LaunchedEffect(platformType) {
+        setupViewModel.fetchModelsForPlatform(platformType)
+    }
+    
+    // Determine which models to display
+    val displayModels = remember(fetchedModels, platformType) {
+        derivedStateOf {
+            val fetched = fetchedModels[platformType]
+            if (fetched != null && fetched.isNotEmpty()) {
+                // Use dynamically fetched models directly
+                fetched.map { model ->
+                    APIModel(
+                        name = model.name,
+                        description = model.description ?: "",
+                        aliasValue = model.id
+                    )
+                }
+            } else {
+                null // Will use fallback
+            }
+        }
+    }.value
+    
+    // Fallback to hardcoded models with localized strings
+    val fallbackModels = when (platformType) {
         ApiType.OPENAI -> generateOpenAIModelList(models = openaiModels)
         ApiType.ANTHROPIC -> generateAnthropicModelList(models = anthropicModels)
         ApiType.GOOGLE -> generateGoogleModelList(models = googleModels)
         ApiType.GROQ -> generateGroqModelList(models = groqModels)
         ApiType.OLLAMA -> listOf()
     }
+    
+    val availableModels = displayModels ?: fallbackModels
     val defaultModel = remember {
         derivedStateOf {
             setupViewModel.setDefaultModel(
@@ -101,6 +141,22 @@ fun SelectModelScreen(
                 }
         ) {
             SelectModelText(title = title, description = description)
+            
+            // Show loading or error state
+            val fetchState = modelFetchState[platformType]
+            when (fetchState) {
+                is ModelFetchResult.Loading -> {
+                    LoadingModelsIndicator()
+                }
+                is ModelFetchResult.Error -> {
+                    ModelFetchError(
+                        message = fetchState.message,
+                        onRetry = { setupViewModel.fetchModelsForPlatform(platformType) }
+                    )
+                }
+                else -> Unit
+            }
+            
             ModelRadioGroup(
                 availableModels = availableModels,
                 initModel = model,
@@ -203,6 +259,55 @@ fun ModelRadioGroup(
             supportingText = {
                 Text(stringResource(R.string.custom_model_warning))
             }
+        )
+    }
+}
+
+@Composable
+fun LoadingModelsIndicator(modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        CircularProgressIndicator(
+            modifier = Modifier.size(24.dp),
+            strokeWidth = 2.dp
+        )
+        Text(
+            text = stringResource(R.string.fetching_models),
+            style = MaterialTheme.typography.bodyMedium,
+            modifier = Modifier.padding(start = 12.dp)
+        )
+    }
+}
+
+@Composable
+fun ModelFetchError(
+    modifier: Modifier = Modifier,
+    message: String,
+    onRetry: () -> Unit
+) {
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = message,
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.error
+        )
+        TextButton(onClick = onRetry) {
+            Text(stringResource(R.string.retry))
+        }
+        Text(
+            text = stringResource(R.string.using_fallback_models),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
         )
     }
 }

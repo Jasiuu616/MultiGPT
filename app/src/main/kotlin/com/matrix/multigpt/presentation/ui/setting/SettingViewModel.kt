@@ -3,8 +3,12 @@ package com.matrix.multigpt.presentation.ui.setting
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import com.matrix.multigpt.data.ModelConstants
+import com.matrix.multigpt.data.dto.ModelFetchResult
+import com.matrix.multigpt.data.dto.ModelInfo
 import com.matrix.multigpt.data.dto.Platform
 import com.matrix.multigpt.data.model.ApiType
+import com.matrix.multigpt.data.network.ModelFetchService
 import com.matrix.multigpt.data.repository.SettingRepository
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,7 +19,8 @@ import kotlinx.coroutines.launch
 
 @HiltViewModel
 class SettingViewModel @Inject constructor(
-    private val settingRepository: SettingRepository
+    private val settingRepository: SettingRepository,
+    private val modelFetchService: ModelFetchService
 ) : ViewModel() {
 
     private val _platformState = MutableStateFlow(listOf<Platform>())
@@ -23,6 +28,12 @@ class SettingViewModel @Inject constructor(
 
     private val _dialogState = MutableStateFlow(DialogState())
     val dialogState: StateFlow<DialogState> = _dialogState.asStateFlow()
+
+    private val _modelFetchState = MutableStateFlow<Map<ApiType, ModelFetchResult>>(emptyMap())
+    val modelFetchState: StateFlow<Map<ApiType, ModelFetchResult>> = _modelFetchState.asStateFlow()
+
+    private val _fetchedModels = MutableStateFlow<Map<ApiType, List<ModelInfo>>>(emptyMap())
+    val fetchedModels: StateFlow<Map<ApiType, List<ModelInfo>>> = _fetchedModels.asStateFlow()
 
     init {
         fetchPlatformStatus()
@@ -186,6 +197,24 @@ class SettingViewModel @Inject constructor(
         viewModelScope.launch {
             val platforms = settingRepository.fetchPlatforms()
             _platformState.update { platforms }
+        }
+    }
+
+    fun fetchModelsForPlatform(apiType: ApiType) {
+        val platform = _platformState.value.find { it.name == apiType } ?: return
+        val apiUrl = platform.apiUrl.ifBlank { ModelConstants.getDefaultAPIUrl(apiType) }
+        val apiKey = platform.token
+
+        viewModelScope.launch {
+            _modelFetchState.update { it + (apiType to ModelFetchResult.Loading) }
+
+            val result = modelFetchService.fetchModels(apiType, apiUrl, apiKey)
+
+            _modelFetchState.update { it + (apiType to result) }
+
+            if (result is ModelFetchResult.Success) {
+                _fetchedModels.update { it + (apiType to result.models) }
+            }
         }
     }
 
