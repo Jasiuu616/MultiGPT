@@ -38,5 +38,9 @@
     <color name="outline_variant_light">#E5E7EB</color>
 
     <!-- Icon Background Color -->
-    <color name="ic_multigpt_background">#6366F1</color>
+    <color name="ic_multigpt_background">#1E1B4B</color>
+    
+    <!-- Splash Screen Colors -->
+    <color name="splash_background">#1E1B4B</color>
+    <color name="splash_icon_background">#312E81</color>
 </resources>

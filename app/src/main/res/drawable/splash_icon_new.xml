@@ -1,62 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-  <!-- Multiple AI nodes converging - representing multiple models under one hood -->
-  <!-- Scaled down to 0.7 for better padding within safe zone -->
+  <!-- Multiple AI nodes converging - Splash screen version with enhanced contrast -->
   <group
       android:translateX="54"
       android:translateY="54"
-      android:scaleX="0.7"
-      android:scaleY="0.7">
+      android:scaleX="0.8"
+      android:scaleY="0.8">
     
-    <!-- Central hub circle (bright for contrast against dark background) -->
+    <!-- Central hub circle (bright white for maximum contrast) -->
     <path
         android:pathData="M0,0 m-12,0 a12,12 0,1 1,24 0 a12,12 0,1 1,-24 0"
         android:fillColor="#FFFFFF"/>
     
-    <!-- Top node (OpenAI - brighter green) -->
+    <!-- Top node (OpenAI - vibrant green) -->
     <path
         android:pathData="M0,-28 m-8,0 a8,8 0,1 1,16 0 a8,8 0,1 1,-16 0"
-        android:fillColor="#34D399"/>
+        android:fillColor="#22C55E"/>
     <path
         android:pathData="M0,-20 L0,-12"
-        android:strokeWidth="3"
+        android:strokeWidth="4"
         android:strokeColor="#FFFFFF"
         android:strokeLineCap="round"/>
     
-    <!-- Right node (Anthropic - brighter orange) -->
+    <!-- Right node (Anthropic - vibrant orange) -->
     <path
         android:pathData="M28,0 m-8,0 a8,8 0,1 1,16 0 a8,8 0,1 1,-16 0"
-        android:fillColor="#FBBF24"/>
+        android:fillColor="#F97316"/>
     <path
         android:pathData="M20,0 L12,0"
-        android:strokeWidth="3"
+        android:strokeWidth="4"
         android:strokeColor="#FFFFFF"
         android:strokeLineCap="round"/>
     
-    <!-- Bottom node (Google - brighter blue) -->
+    <!-- Bottom node (Google - vibrant blue) -->
     <path
         android:pathData="M0,28 m-8,0 a8,8 0,1 1,16 0 a8,8 0,1 1,-16 0"
-        android:fillColor="#60A5FA"/>
+        android:fillColor="#3B82F6"/>
     <path
         android:pathData="M0,20 L0,12"
-        android:strokeWidth="3"
+        android:strokeWidth="4"
         android:strokeColor="#FFFFFF"
         android:strokeLineCap="round"/>
     
-    <!-- Left node (Others - brighter purple) -->
+    <!-- Left node (Others - vibrant purple) -->
     <path
         android:pathData="M-28,0 m-8,0 a8,8 0,1 1,16 0 a8,8 0,1 1,-16 0"
-        android:fillColor="#C084FC"/>
+        android:fillColor="#8B5CF6"/>
     <path
         android:pathData="M-20,0 L-12,0"
-        android:strokeWidth="3"
+        android:strokeWidth="4"
         android:strokeColor="#FFFFFF"
         android:strokeLineCap="round"/>
     
-    <!-- Small dots in center hub to represent unified interface -->
+    <!-- Small dots in center hub (light for contrast) -->
     <path
         android:pathData="M-4,-2 m-2,0 a2,2 0,1 1,4 0 a2,2 0,1 1,-4 0"
         android:fillColor="#E0E7FF"/>

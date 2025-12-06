@@ -36,4 +36,8 @@
     <!-- Outline and Divider Colors - Dark Mode -->
     <color name="outline_dark">#374151</color>
     <color name="outline_variant_dark">#1F2937</color>
+    
+    <!-- Splash Screen Colors - Dark Mode -->
+    <color name="splash_background">#0F0F23</color>
+    <color name="splash_icon_background">#3730A3</color>
 </resources>
