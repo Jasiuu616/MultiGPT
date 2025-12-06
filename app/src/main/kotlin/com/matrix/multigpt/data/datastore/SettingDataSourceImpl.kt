@@ -34,7 +34,7 @@ class SettingDataSourceImpl @Inject constructor(
     private val apiTokenMap = mapOf(
         ApiType.OPENAI to stringPreferencesKey("openai_token"),
         ApiType.ANTHROPIC to stringPreferencesKey("anthropic_token"),
-        ApiType.GOOGLE to stringPreferencesKey("google_token"),
+        ApiType.GOOGLE to stringPreferencesKey("google_ai_platform_token"),
         ApiType.GROQ to stringPreferencesKey("groq_token"),
         ApiType.OLLAMA to stringPreferencesKey("ollama_token")
     )

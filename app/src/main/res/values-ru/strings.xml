@@ -18,7 +18,7 @@
     <string name="need_help">Нужна помощь?</string>
     <string name="openai_api_key">API-ключ OpenAI</string>
     <string name="anthropic_api_key">API-ключ Anthropic</string>
-    <string name="google_api_key">API-ключ Google</string>
+    <string name="gemini_api_key">API-ключ Gemini</string>
     <string name="select_openai_model">Выберите модель чата OpenAI</string>
     <string name="select_openai_model_description">Пожалуйста, выберите модель чата OpenAI. Даже если выбранная модель является мультимодальной, в настоящее время приложение поддерживает только текстовый ввод. Возможно, в будущем будет добавлена поддержка.</string>
     <string name="gpt_4o_description">Самая быстрая и доступная флагманская модель.</string>

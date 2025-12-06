@@ -13,7 +13,7 @@
     <string name="enter_api_key">הזן מפתח API</string>
     <string name="need_help">צריך עזרה?</string>
     <string name="anthropic_api_key">מפתח API Anthropic</string>
-    <string name="google_api_key">מפתח Google API</string>
+    <string name="gemini_api_key">מפתח Gemini API</string>
     <string name="select_openai_model">בחר מודל צ\'אט של OpenAI</string>
     <string name="gpt_4_description">מתפקד בצורה הטובה ביותר בפתרון בעיות מופשטות.</string>
     <string name="select_anthropic_model">בחר מודל צ\'אט אנתרופי</string>

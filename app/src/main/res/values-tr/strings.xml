@@ -20,7 +20,7 @@
     <string name="need_help">Yardım mı lazım?</string>
     <string name="openai_api_key">OpenAI API Anahtarı</string>
     <string name="anthropic_api_key">Anthropic API Anahtarı</string>
-    <string name="google_api_key">Google API Anahtarı</string>
+    <string name="gemini_api_key">Gemini API Anahtarı</string>
     <string name="openai_api_help" translatable="false">https://platform.openai.com/account/api-keys</string>
     <string name="anthropic_api_help" translatable="false">https://console.anthropic.com/settings/keys</string>
     <string name="google_api_help" translatable="false">https://aistudio.google.com/app/apikey</string>

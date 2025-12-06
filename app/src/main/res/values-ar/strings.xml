@@ -16,7 +16,7 @@
     <string name="need_help">هل تحتاج مساعدة؟</string>
     <string name="openai_api_key">مفتاح OpenAI API</string>
     <string name="anthropic_api_key">مفتاح Anthropic API</string>
-    <string name="google_api_key">مفتاح Google API</string>
+    <string name="gemini_api_key">مفتاح Gemini API</string>
     <string name="gpt_4_turbo_description">موثوقية جيدة، أرخص بثلاث مرات من GPT-4.</string>
     <string name="gpt_4_description">يؤدي أفضل أداء في حل المشكلات المجردة.</string>
     <string name="setup_complete">أنت جاهز!</string>

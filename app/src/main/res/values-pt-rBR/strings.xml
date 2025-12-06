@@ -8,7 +8,7 @@
     <string name="need_help">Necessita de ajuda?</string>
     <string name="openai_api_key">OpenAI Chave API</string>
     <string name="anthropic_api_key">Chave API Anthropic</string>
-    <string name="google_api_key">Chave API Google</string>
+    <string name="gemini_api_key">Chave API Gemini</string>
     <string name="select_openai_model">Selecione o modelo de bate-papo OpenAI</string>
     <string name="select_openai_model_description">Selecione o modelo de chat OpenAI. Mesmo que o modelo selecionado seja multimodal, o aplicativo atualmente suporta apenas entradas de texto. Pode ser suportado mais tarde no futuro.</string>
     <string name="gpt_4o_description">O modelo principal mais rápido e acessível.</string>
