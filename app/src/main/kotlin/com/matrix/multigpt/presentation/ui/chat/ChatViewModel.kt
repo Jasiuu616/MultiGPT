@@ -78,6 +78,9 @@ class ChatViewModel @Inject constructor(
     private val _ollamaLoadingState = MutableStateFlow<LoadingState>(LoadingState.Idle)
     val ollamaLoadingState = _ollamaLoadingState.asStateFlow()
 
+    private val _bedrockLoadingState = MutableStateFlow<LoadingState>(LoadingState.Idle)
+    val bedrockLoadingState = _bedrockLoadingState.asStateFlow()
+
     private val _geminiNanoLoadingState = MutableStateFlow<LoadingState>(LoadingState.Idle)
     val geminiNanoLoadingState = _geminiNanoLoadingState.asStateFlow()
 
@@ -110,6 +113,9 @@ class ChatViewModel @Inject constructor(
     private val _ollamaMessage = MutableStateFlow(Message(chatId = chatRoomId, content = "", platformType = ApiType.OLLAMA))
     val ollamaMessage = _ollamaMessage.asStateFlow()
 
+    private val _bedrockMessage = MutableStateFlow(Message(chatId = chatRoomId, content = "", platformType = ApiType.BEDROCK))
+    val bedrockMessage = _bedrockMessage.asStateFlow()
+
     private val _geminiNanoMessage = MutableStateFlow(Message(chatId = chatRoomId, content = "", platformType = null))
     val geminiNanoMessage = _geminiNanoMessage.asStateFlow()
 
@@ -119,6 +125,7 @@ class ChatViewModel @Inject constructor(
     private val googleFlow = MutableSharedFlow<ApiState>()
     private val groqFlow = MutableSharedFlow<ApiState>()
     private val ollamaFlow = MutableSharedFlow<ApiState>()
+    private val bedrockFlow = MutableSharedFlow<ApiState>()
     private val geminiNanoFlow = MutableSharedFlow<ApiState>()
 
     init {
@@ -434,6 +441,7 @@ class ChatViewModel @Inject constructor(
             ApiType.GOOGLE -> _googleLoadingState
             ApiType.GROQ -> _groqLoadingState
             ApiType.OLLAMA -> _ollamaLoadingState
+            ApiType.BEDROCK -> _bedrockLoadingState
         }
 
         if (retryingState == LoadingState.Loading) return
@@ -445,6 +453,7 @@ class ChatViewModel @Inject constructor(
             ApiType.GOOGLE -> _googleMessage.update { message }
             ApiType.GROQ -> _groqMessage.update { message }
             ApiType.OLLAMA -> _ollamaMessage.update { message }
+            ApiType.BEDROCK -> _bedrockMessage.update { message }
         }
     }
 
@@ -471,6 +480,10 @@ class ChatViewModel @Inject constructor(
         if (ApiType.OLLAMA in enabledPlatforms) {
             addMessage(_ollamaMessage.value)
         }
+
+        if (ApiType.BEDROCK in enabledPlatforms) {
+            addMessage(_bedrockMessage.value)
+        }
     }
 
     private fun updateLoadingState(apiType: ApiType, loadingState: LoadingState) {
@@ -480,6 +493,7 @@ class ChatViewModel @Inject constructor(
             ApiType.GOOGLE -> _googleLoadingState.update { loadingState }
             ApiType.GROQ -> _groqLoadingState.update { loadingState }
             ApiType.OLLAMA -> _ollamaLoadingState.update { loadingState }
+            ApiType.BEDROCK -> _bedrockLoadingState.update { loadingState }
         }
 
         var result = true
@@ -490,6 +504,7 @@ class ChatViewModel @Inject constructor(
                 ApiType.GOOGLE -> _googleLoadingState
                 ApiType.GROQ -> _groqLoadingState
                 ApiType.OLLAMA -> _ollamaLoadingState
+                ApiType.BEDROCK -> _bedrockLoadingState
             }
 
             result = result && (state.value is LoadingState.Idle)

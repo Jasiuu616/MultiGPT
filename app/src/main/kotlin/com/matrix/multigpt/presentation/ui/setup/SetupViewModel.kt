@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import com.matrix.multigpt.data.ModelConstants.anthropicModels
+import com.matrix.multigpt.data.ModelConstants.bedrockModels
 import com.matrix.multigpt.data.ModelConstants.googleModels
 import com.matrix.multigpt.data.ModelConstants.groqModels
 import com.matrix.multigpt.data.ModelConstants.ollamaModels
@@ -35,9 +36,10 @@ class SetupViewModel @Inject constructor(
     private val _platformState = MutableStateFlow(
         listOf(
             Platform(ApiType.OPENAI),
+            Platform(ApiType.GROQ),
+            Platform(ApiType.BEDROCK),
             Platform(ApiType.ANTHROPIC),
             Platform(ApiType.GOOGLE),
-            Platform(ApiType.GROQ),
             Platform(ApiType.OLLAMA)
         )
     )
@@ -140,9 +142,10 @@ class SetupViewModel @Inject constructor(
             Route.SELECT_PLATFORM,
             Route.TOKEN_INPUT,
             Route.OPENAI_MODEL_SELECT,
+            Route.GROQ_MODEL_SELECT,
+            Route.BEDROCK_MODEL_SELECT,
             Route.ANTHROPIC_MODEL_SELECT,
             Route.GOOGLE_MODEL_SELECT,
-            Route.GROQ_MODEL_SELECT,
             Route.OLLAMA_MODEL_SELECT,
             Route.OLLAMA_API_ADDRESS,
             Route.SETUP_COMPLETE
@@ -154,6 +157,7 @@ class SetupViewModel @Inject constructor(
             Route.GOOGLE_MODEL_SELECT to ApiType.GOOGLE,
             Route.GROQ_MODEL_SELECT to ApiType.GROQ,
             Route.OLLAMA_MODEL_SELECT to ApiType.OLLAMA,
+            Route.BEDROCK_MODEL_SELECT to ApiType.BEDROCK,
             Route.OLLAMA_API_ADDRESS to ApiType.OLLAMA
         )
 
@@ -185,6 +189,7 @@ class SetupViewModel @Inject constructor(
             ApiType.GOOGLE -> googleModels
             ApiType.GROQ -> groqModels
             ApiType.OLLAMA -> ollamaModels
+            ApiType.BEDROCK -> bedrockModels
         }.toList()
 
         if (modelList.size <= defaultModelIndex) {
@@ -222,6 +227,7 @@ class SetupViewModel @Inject constructor(
             ApiType.GOOGLE -> googleModels.toList()
             ApiType.GROQ -> groqModels.toList()
             ApiType.OLLAMA -> ollamaModels.toList()
+            ApiType.BEDROCK -> bedrockModels.toList()
         }
     }
 }

@@ -3,7 +3,7 @@
     <string name="app_name">MultiGPT</string>
     <string name="gpt_mobile_introduction_logo">MultiGPT的介绍图标</string>
     <string name="welcome_title">最好的AI助理，\n你可以在你的手机上用它。</string>
-    <string name="welcome_description">选择一个最适合你的模型，问一切你想问的!</string>
+    <string name="welcome_description">连接 OpenAI、Claude、Gemini、AWS Bedrock 等。\n一个强大的应用程序即可搞定一切。</string>
     <string name="get_started">开始使用</string>
     <string name="platform_select_description">选择您要使用的平台，也可以稍后在设置中更改。更多平台将要被支持。</string>
     <string name="sample_item_title">项目 1</string>
@@ -105,7 +105,6 @@
     <string name="license_icon">许可证的图标</string>
     <string name="feedback_icon">反馈的图标</string>
     <string name="github_icon">Github的图标</string>
-    <string name="f_droid_icon">F-droid的图标</string>
     <string name="play_store_icon">Play商店的图标</string>
     <string name="api_url">API网址</string>
     <string name="url_icon">URL的图标</string>
@@ -152,5 +151,27 @@
     <string name="token_input_warning">注意：OpenAI和Anthropic使用预付费计费，因此在使用之前，您必须确保账户剩有余额。否则将返回错误。</string>
     <string name="edit_question">编辑用户信息</string>
     <string name="user_message">用户消息</string>
+    <string name="bedrock_description">来自Amazon、Anthropic、AI21等的基础模型。</string>
+    <string name="bedrock_credentials">AWS凭证</string>
+    <string name="bedrock_setting">AWS Bedrock设置</string>
+    <string name="select_bedrock_model">选择AWS Bedrock模型</string>
+    <string name="select_bedrock_model_description">从AWS Bedrock上可用的基础模型中选择。确保您在AWS账户中有权访问所选模型。</string>
+    <string name="claude_instant_description">快速、实惠的简单任务模型。</string>
+    <string name="titan_text_express_description">Amazon的旗舰文本生成模型。</string>
+    <string name="titan_text_lite_description">用于简单任务的轻量级文本模型。</string>
+    <string name="jurassic_2_ultra_description">AI21 Labs最强大的语言模型。</string>
+    <string name="jurassic_2_mid_description">平衡性能的文本模型。</string>
+    <string name="command_description">Cohere的指令跟随模型。</string>
+    <string name="command_light_description">快速高效的语言模型。</string>
+    <string name="llama_2_13b_description">Meta的微调聊天模型。</string>
+    <string name="llama_2_70b_description">具有高性能的大参数聊天模型。</string>
+    <string name="aws_access_key_id">AWS访问密钥ID</string>
+    <string name="aws_secret_access_key">AWS秘密访问密钥</string>
+    <string name="aws_region">AWS区域</string>
+    <string name="aws_session_token">AWS会话令牌</string>
+    <string name="aws_session_token_optional">临时凭证可选</string>
+    <string name="aws_session_token_help">仅临时AWS凭证(STS)需要</string>
+    <string name="aws_region_help">选择可用Bedrock的AWS区域（例如us-east-1、us-west-2）</string>
+    <string name="bedrock_credentials_description">输入您的AWS凭证以访问Bedrock基础模型。它们仅安全存储在您的设备上。</string>
     <string name="export_chat">导出会话</string>
 </resources>

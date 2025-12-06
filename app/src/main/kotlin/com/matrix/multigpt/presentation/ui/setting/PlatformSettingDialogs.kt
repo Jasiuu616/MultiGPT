@@ -37,6 +37,7 @@ import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.matrix.multigpt.R
 import com.matrix.multigpt.data.ModelConstants.anthropicModels
+import com.matrix.multigpt.data.ModelConstants.bedrockModels
 import com.matrix.multigpt.data.ModelConstants.getDefaultAPIUrl
 import com.matrix.multigpt.data.ModelConstants.googleModels
 import com.matrix.multigpt.data.ModelConstants.groqModels
@@ -45,9 +46,11 @@ import com.matrix.multigpt.data.ModelConstants.openaiModels
 import com.matrix.multigpt.data.dto.APIModel
 import com.matrix.multigpt.data.dto.ModelFetchResult
 import com.matrix.multigpt.data.model.ApiType
+import com.matrix.multigpt.presentation.common.BedrockCredentialsField
 import com.matrix.multigpt.presentation.common.RadioItem
 import com.matrix.multigpt.presentation.common.TokenInputField
 import com.matrix.multigpt.util.generateAnthropicModelList
+import com.matrix.multigpt.util.generateBedrockModelList
 import com.matrix.multigpt.util.generateGoogleModelList
 import com.matrix.multigpt.util.generateGroqModelList
 import com.matrix.multigpt.util.generateOpenAIModelList
@@ -266,14 +269,22 @@ private fun APIKeyDialog(
             .heightIn(max = configuration.screenHeightDp.dp - 80.dp),
         title = { Text(text = getPlatformAPILabelResources()[apiType]!!) },
         text = {
-            TokenInputField(
-                value = token,
-                onValueChange = { token = it },
-                onClearClick = { token = "" },
-                label = getPlatformAPILabelResources()[apiType]!!,
-                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
-                helpLink = getPlatformHelpLinkResources()[apiType]!!
-            )
+            if (apiType == ApiType.BEDROCK) {
+                BedrockCredentialsField(
+                    value = token,
+                    onValueChange = { token = it },
+                    onClearClick = { token = "" }
+                )
+            } else {
+                TokenInputField(
+                    value = token,
+                    onValueChange = { token = it },
+                    onClearClick = { token = "" },
+                    label = getPlatformAPILabelResources()[apiType]!!,
+                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
+                    helpLink = getPlatformHelpLinkResources()[apiType]!!
+                )
+            }
         },
         onDismissRequest = onDismissRequest,
         confirmButton = {
@@ -335,6 +346,7 @@ private fun ModelDialog(
         ApiType.GOOGLE -> googleModels
         ApiType.GROQ -> groqModels
         ApiType.OLLAMA -> ollamaModels
+        ApiType.BEDROCK -> bedrockModels
     }
     val fallbackModels = when (apiType) {
         ApiType.OPENAI -> generateOpenAIModelList(models = modelList)
@@ -342,6 +354,7 @@ private fun ModelDialog(
         ApiType.GOOGLE -> generateGoogleModelList(models = modelList)
         ApiType.GROQ -> generateGroqModelList(models = modelList)
         ApiType.OLLAMA -> listOf()
+        ApiType.BEDROCK -> generateBedrockModelList(models = modelList)
     }
     
     val availableModels = displayModels ?: fallbackModels

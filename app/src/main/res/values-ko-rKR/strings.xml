@@ -3,7 +3,7 @@
     <string name="app_name">MultiGPT</string>
     <string name="gpt_mobile_introduction_logo">GPT Moble 시작 로고</string>
     <string name="welcome_title">휴대폰에서 사용할 수 있는 최고의 AI 챗봇.</string>
-    <string name="welcome_description">가장 적합한 모델을 사용해 무엇이든 질문해보세요!</string>
+    <string name="welcome_description">OpenAI, Claude, Gemini, AWS Bedrock 등에 연결하세요.\n하나의 강력한 앱에서 모든 것을.</string>
     <string name="get_started">시작하기</string>
     <string name="platform_select_description">사용할 플랫폼을 선택하세요. 나중에 설정에서 변경할 수 있습니다. 추후 다른 플랫폼도 지원 예정입니다.</string>
     <string name="sample_item_title">아이템 1</string>
@@ -105,7 +105,6 @@
     <string name="license_icon">라이선스 아이콘</string>
     <string name="feedback_icon">피드백 아이콘</string>
     <string name="github_icon">GitHub 아이콘</string>
-    <string name="f_droid_icon">F-Droid 아이콘</string>
     <string name="play_store_icon">Play Store 아이콘</string>
     <string name="api_url">API 주소</string>
     <string name="url_icon">주소 아이콘</string>
@@ -152,4 +151,26 @@
     <string name="chat_title_dialog_description">AI 제목 생성은 AICore가 지원되는 디바이스에서만 사용가능합니다.</string>
     <string name="edit_question">사용자 메시지 편집</string>
     <string name="user_message">사용자 메시지</string>
+    <string name="bedrock_description">Amazon, Anthropic, AI21 등의 기초 모델들.</string>
+    <string name="bedrock_credentials">AWS 자격증명</string>
+    <string name="bedrock_setting">AWS Bedrock 설정</string>
+    <string name="select_bedrock_model">AWS Bedrock 모델 선택</string>
+    <string name="select_bedrock_model_description">AWS Bedrock에서 사용 가능한 기초 모델 중에서 선택하세요. AWS 계정에서 선택한 모델에 액세스할 수 있는지 확인하세요.</string>
+    <string name="claude_instant_description">간단한 작업을 위한 빠르고 저렴한 모델.</string>
+    <string name="titan_text_express_description">Amazon의 플래그십 텍스트 생성 모델.</string>
+    <string name="titan_text_lite_description">간단한 작업을 위한 경량 텍스트 모델.</string>
+    <string name="jurassic_2_ultra_description">AI21 Labs의 가장 강력한 언어 모델.</string>
+    <string name="jurassic_2_mid_description">균형 잡힌 성능의 텍스트 모델.</string>
+    <string name="command_description">Cohere의 지시 따라하기 모델.</string>
+    <string name="command_light_description">빠르고 효율적인 언어 모델.</string>
+    <string name="llama_2_13b_description">Meta의 세밀하게 조정된 채팅 모델.</string>
+    <string name="llama_2_70b_description">고성능을 가진 대형 매개변수 채팅 모델.</string>
+    <string name="aws_access_key_id">AWS 액세스 키 ID</string>
+    <string name="aws_secret_access_key">AWS 비밀 액세스 키</string>
+    <string name="aws_region">AWS 리전</string>
+    <string name="aws_session_token">AWS 세션 토큰</string>
+    <string name="aws_session_token_optional">임시 자격증명 선택사항</string>
+    <string name="aws_session_token_help">임시 AWS 자격증명(STS)에만 필요</string>
+    <string name="aws_region_help">Bedrock이 사용 가능한 AWS 리전을 선택하세요 (예: us-east-1, us-west-2)</string>
+    <string name="bedrock_credentials_description">Bedrock 기초 모델에 액세스하려면 AWS 자격증명을 입력하세요. 디바이스에만 안전하게 저장됩니다.</string>
 </resources>

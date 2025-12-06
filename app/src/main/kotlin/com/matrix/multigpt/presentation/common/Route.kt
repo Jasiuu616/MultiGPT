@@ -12,6 +12,7 @@ object Route {
     const val GOOGLE_MODEL_SELECT = "google_model_select"
     const val GROQ_MODEL_SELECT = "groq_model_select"
     const val OLLAMA_MODEL_SELECT = "ollama_model_select"
+    const val BEDROCK_MODEL_SELECT = "bedrock_model_select"
     const val OLLAMA_API_ADDRESS = "ollama_api_address"
     const val SETUP_COMPLETE = "setup_complete"
 
@@ -25,6 +26,7 @@ object Route {
     const val GOOGLE_SETTINGS = "google_settings"
     const val GROQ_SETTINGS = "groq_settings"
     const val OLLAMA_SETTINGS = "ollama_settings"
+    const val BEDROCK_SETTINGS = "bedrock_settings"
     const val ABOUT_PAGE = "about"
     const val LICENSE = "license"
 }

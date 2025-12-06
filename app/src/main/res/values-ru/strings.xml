@@ -3,7 +3,7 @@
     <string name="app_name">MultiGPT</string>
     <string name="gpt_mobile_introduction_logo">Логотип приветствия MultiGPT</string>
     <string name="welcome_title">Лучший ИИ помощник,\nкоторый вы можете получить\nна свой смартфон.</string>
-    <string name="welcome_description">Используйте модель, которая вам больше всего подходит.\nЗадавайте любые вопросы!</string>
+    <string name="welcome_description">Подключайтесь к OpenAI, Claude, Gemini, AWS Bedrock и другим.\nВсе из одного мощного приложения.</string>
     <string name="get_started">Начать</string>
     <string name="platform_select_description">Выберите платформу, которую хотите использовать. Вы сможете изменить это позже в настройках. В будущем будет поддерживаться больше платформ.</string>
     <string name="sample_item_title">Элемент 1</string>
@@ -105,7 +105,6 @@
     <string name="license_icon">Иконка лицензии</string>
     <string name="feedback_icon">Иконка обратной связи</string>
     <string name="github_icon">Иконка GitHub</string>
-    <string name="f_droid_icon">Иконка F-Droid</string>
     <string name="play_store_icon">Иконка Play Store</string>
     <string name="api_url">URL API</string>
     <string name="url_icon">Иконка URL</string>
@@ -152,5 +151,27 @@
     <string name="retry_ai_title">Повторить попытку сгенерировать заголовок ИИ</string>
     <string name="edit">Изменить</string>
     <string name="user_message">Сообщение пользователя</string>
+    <string name="bedrock_description">Базовые модели от Amazon, Anthropic, AI21 и других.</string>
+    <string name="bedrock_credentials">Учетные данные AWS</string>
+    <string name="bedrock_setting">Настройки AWS Bedrock</string>
+    <string name="select_bedrock_model">Выберите модель AWS Bedrock</string>
+    <string name="select_bedrock_model_description">Выберите из базовых моделей, доступных на AWS Bedrock. Убедитесь, что у вас есть доступ к выбранной модели в вашем аккаунте AWS.</string>
+    <string name="claude_instant_description">Быстрая, доступная модель для простых задач.</string>
+    <string name="titan_text_express_description">Флагманская модель генерации текста от Amazon.</string>
+    <string name="titan_text_lite_description">Легкая текстовая модель для простых задач.</string>
+    <string name="jurassic_2_ultra_description">Самая мощная языковая модель от AI21 Labs.</string>
+    <string name="jurassic_2_mid_description">Текстовая модель со сбалансированной производительностью.</string>
+    <string name="command_description">Модель Cohere, следующая инструкциям.</string>
+    <string name="command_light_description">Быстрая и эффективная языковая модель.</string>
+    <string name="llama_2_13b_description">Настроенная модель чата от Meta.</string>
+    <string name="llama_2_70b_description">Большая параметрическая модель чата с высокой производительностью.</string>
+    <string name="aws_access_key_id">ID ключа доступа AWS</string>
+    <string name="aws_secret_access_key">Секретный ключ доступа AWS</string>
+    <string name="aws_region">Регион AWS</string>
+    <string name="aws_session_token">Токен сессии AWS</string>
+    <string name="aws_session_token_optional">Необязательно для временных учетных данных</string>
+    <string name="aws_session_token_help">Необходим только для временных учетных данных AWS (STS)</string>
+    <string name="aws_region_help">Выберите регион AWS, где доступен Bedrock (например, us-east-1, us-west-2)</string>
+    <string name="bedrock_credentials_description">Введите ваши учетные данные AWS для доступа к базовым моделям Bedrock. Они хранятся безопасно только на вашем устройстве.</string>
     <string name="export_chat">Экспортировать чат</string>
 </resources>

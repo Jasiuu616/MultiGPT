@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="gpt_mobile_introduction_logo">Logotipo de introdução do MultiGPT</string>
-    <string name="welcome_description">Use o modelo que mais combina com você\nmais. Pergunte o que quiser!</string>
+    <string name="welcome_description">Conecte-se ao OpenAI, Claude, Gemini, AWS Bedrock e mais.\nTudo de um aplicativo poderoso.</string>
     <string name="get_started">Começar</string>
     <string name="sample_item_title">Item 1</string>
     <string name="sample_item_description">Descrição do item</string>
@@ -121,7 +121,6 @@
     <string name="close">Fechar</string>
     <string name="temperature">Temperatura</string>
     <string name="system_prompt">Prompt do sistema</string>
-    <string name="f_droid_icon">Ícone do F-Droid</string>
     <string name="reset">Reiniciar</string>
     <string name="scroll_to_bottom_icon">Ícone de rolagem para baixo</string>
     <string name="bug_report_description">Algo não está funcionando corretamente?</string>
@@ -152,4 +151,26 @@
     <string name="user_message">Mensagem do Usuário</string>
     <string name="title_length_limit">Limite de comprimento do título: %1$s/50</string>
     <string name="ai_generated">Gerado por IA (Beta)</string>
+    <string name="bedrock_description">Modelos de base da Amazon, Anthropic, AI21 e outros.</string>
+    <string name="bedrock_credentials">Credenciais AWS</string>
+    <string name="bedrock_setting">Configurações AWS Bedrock</string>
+    <string name="select_bedrock_model">Selecionar modelo AWS Bedrock</string>
+    <string name="select_bedrock_model_description">Escolha entre os modelos de base disponíveis no AWS Bedrock. Certifique-se de ter acesso ao modelo selecionado na sua conta AWS.</string>
+    <string name="claude_instant_description">Modelo rápido e acessível para tarefas simples.</string>
+    <string name="titan_text_express_description">Modelo principal de geração de texto da Amazon.</string>
+    <string name="titan_text_lite_description">Modelo de texto leve para tarefas simples.</string>
+    <string name="jurassic_2_ultra_description">O modelo de linguagem mais poderoso da AI21 Labs.</string>
+    <string name="jurassic_2_mid_description">Modelo de texto com desempenho equilibrado.</string>
+    <string name="command_description">Modelo de seguir instruções da Cohere.</string>
+    <string name="command_light_description">Modelo de linguagem rápido e eficiente.</string>
+    <string name="llama_2_13b_description">Modelo de chat ajustado da Meta.</string>
+    <string name="llama_2_70b_description">Modelo de chat de parâmetros grandes com alta capacidade.</string>
+    <string name="aws_access_key_id">ID da chave de acesso AWS</string>
+    <string name="aws_secret_access_key">Chave de acesso secreta AWS</string>
+    <string name="aws_region">Região AWS</string>
+    <string name="aws_session_token">Token de sessão AWS</string>
+    <string name="aws_session_token_optional">Opcional para credenciais temporárias</string>
+    <string name="aws_session_token_help">Necessário apenas para credenciais temporárias AWS (STS)</string>
+    <string name="aws_region_help">Escolha a região AWS onde o Bedrock está disponível (ex: us-east-1, us-west-2)</string>
+    <string name="bedrock_credentials_description">Digite suas credenciais AWS para acessar os modelos de base do Bedrock. Elas são armazenadas com segurança apenas no seu dispositivo.</string>
 </resources>

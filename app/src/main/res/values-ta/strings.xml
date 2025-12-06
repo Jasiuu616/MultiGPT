@@ -13,7 +13,7 @@
     <string name="platform_select_description">நீங்கள் பயன்படுத்த விரும்பும் தளத்தைத் தேர்வுசெய்க. இதை நீங்கள் பின்னர் அமைப்புகளில் மாற்றலாம். ஆதரிக்கப்பட வேண்டிய கூடுதல் தளங்கள்.</string>
     <string name="sample_item_title">பொருள் 1</string>
     <string name="sample_item_description">உருப்படி விளக்கம்</string>
-    <string name="welcome_description">உங்களுக்கு ஏற்ற மாதிரியைப் பயன்படுத்தவும்\n மிக அதிகம். நீங்கள் விரும்பும் எதையும் கேளுங்கள்!</string>
+    <string name="welcome_description">OpenAI, Claude, Gemini, AWS Bedrock மற்றும் பிறவற்றுடன் இணைக்கவும்.\nஒரு சக்திவாய்ந்த பயன்பாட்டிலிருந்து அனைத்தும்.</string>
     <string name="openai_description">சாட்சிப்ட்டை உருவாக்கியவர்.</string>
     <string name="gpt_4o_description">வேகமான மற்றும் மிகவும் மலிவு முதன்மை மாதிரி.</string>
     <string name="anthropic_description">கிளாட் இங்கே பிறந்தார்.</string>
@@ -108,7 +108,6 @@
     <string name="license_icon">உரிம படவுரு</string>
     <string name="feedback_icon">கருத்து படவுரு</string>
     <string name="github_icon">அறிவிலிமையம் படவுரு</string>
-    <string name="f_droid_icon">எஃப்-டிராய்டு படவுரு</string>
     <string name="play_store_icon">கடை படவுரு விளையாடுங்கள்</string>
     <string name="url_icon">முகவரி படவுரு</string>
     <string name="select_ollama_model">ஒல்லாமா அரட்டை மாதிரியைத் தேர்ந்தெடுக்கவும்</string>
@@ -152,4 +151,26 @@
     <string name="token_input_warning">குறிப்பு: ஓப்பனாய் மற்றும் ஆந்த்ரிக் ப்ரீபெய்ட் பில்லிங்கைப் பயன்படுத்துகின்றன, எனவே நீங்கள் ஒவ்வொரு கணக்குகளிலும் அவற்றைப் பயன்படுத்துவதற்கு முன்பு வரவுகளை வசூலிக்க வேண்டும். இல்லையெனில், பதில் பிழையைத் தரும்.</string>
     <string name="edit_question">பயனர் செய்தியைத் திருத்தவும்</string>
     <string name="user_message">பயனர் செய்தி</string>
+    <string name="bedrock_description">Amazon, Anthropic, AI21 மற்றும் பிறவற்றிலிருந்து அடிப்படை மாதிரிகள்.</string>
+    <string name="bedrock_credentials">AWS நற்சான்றிதழ்கள்</string>
+    <string name="bedrock_setting">AWS Bedrock அமைப்புகள்</string>
+    <string name="select_bedrock_model">AWS Bedrock மாதிரியைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="select_bedrock_model_description">AWS Bedrock இல் கிடைக்கும் அடிப்படை மாதிரிகளிலிருந்து தேர்ந்தெடுக்கவும். உங்கள் AWS கணக்கில் தேர்ந்தெடுக்கப்பட்ட மாதிரிக்கு அணுகல் இருப்பதை உறுதிசெய்யவும்.</string>
+    <string name="claude_instant_description">எளிய பணிகளுக்கு வேகமான, மலிவான மாதிரி.</string>
+    <string name="titan_text_express_description">அமேசானின் முதன்மை உரை உருவாக்கும் மாதிரி.</string>
+    <string name="titan_text_lite_description">எளிய பணிகளுக்கான லேசான உரை மாதிரி.</string>
+    <string name="jurassic_2_ultra_description">AI21 Labs இன் மிகவும் சக்தி வாய்ந்த மொழி மாதிரி.</string>
+    <string name="jurassic_2_mid_description">சீரான செயல்திறன் உரை மாதிரி.</string>
+    <string name="command_description">Cohere இன் வழிமுறை பின்பற்றும் மாதிரி.</string>
+    <string name="command_light_description">வேகமான மற்றும் திறமையான மொழி மாதிரி.</string>
+    <string name="llama_2_13b_description">Meta இன் நன்றாக டியூன் செய்யப்பட்ட அரட்டை மாதிரி.</string>
+    <string name="llama_2_70b_description">அதிக திறன் கொண்ட பெரிய அளவுரு அரட்டை மாதிரி.</string>
+    <string name="aws_access_key_id">AWS அணுகல் விசை ஐடி</string>
+    <string name="aws_secret_access_key">AWS ரகசிய அணுகல் விசை</string>
+    <string name="aws_region">AWS பகுதி</string>
+    <string name="aws_session_token">AWS அமர்வு டோக்கன்</string>
+    <string name="aws_session_token_optional">தற்காலிக நற்சான்றிதழ்களுக்கு விருப்பத்திற்கு</string>
+    <string name="aws_session_token_help">தற்காலிக AWS நற்சான்றிதழ்கள் (STS) க்கு மட்டுமே தேவை</string>
+    <string name="aws_region_help">Bedrock கிடைக்கும் AWS பகுதியைத் தேர்ந்தெடுக்கவும் (எ.கா. us-east-1, us-west-2)</string>
+    <string name="bedrock_credentials_description">Bedrock அடிப்படை மாதிரிகளை அணுக உங்கள் AWS நற்சான்றிதழ்களை உள்ளிடவும். அவை உங்கள் சாதனத்தில் மட்டுமே பாதுகாப்பாக சேமிக்கப்படும்.</string>
 </resources>

@@ -39,6 +39,7 @@ class ModelFetchServiceImpl @Inject constructor(
                 ApiType.GOOGLE -> fetchGoogleModels(apiUrl, apiKey)
                 ApiType.ANTHROPIC -> fetchAnthropicModels()
                 ApiType.OLLAMA -> fetchOllamaModels(apiUrl)
+                ApiType.BEDROCK -> fetchBedrockModels()
             }
         } catch (e: Exception) {
             ModelFetchResult.Error("Failed to fetch models: ${e.message}")
@@ -205,6 +206,74 @@ class ModelFetchServiceImpl @Inject constructor(
         } catch (e: Exception) {
             ModelFetchResult.Error("Failed to fetch Ollama models: ${e.message ?: "Unknown error"}. Using fallback models.")
         }
+    }
+
+    private suspend fun fetchBedrockModels(): ModelFetchResult {
+        // AWS Bedrock doesn't provide a public models endpoint
+        // Return hardcoded list of available foundation models
+        val models = listOf(
+            ModelInfo(
+                id = "anthropic.claude-3-5-sonnet-20240620-v1:0",
+                name = "Claude 3.5 Sonnet",
+                description = "Anthropic's most intelligent model"
+            ),
+            ModelInfo(
+                id = "anthropic.claude-3-sonnet-20240229-v1:0",
+                name = "Claude 3 Sonnet",
+                description = "Balance of intelligence and speed"
+            ),
+            ModelInfo(
+                id = "anthropic.claude-3-haiku-20240307-v1:0",
+                name = "Claude 3 Haiku",
+                description = "Fast and lightweight model"
+            ),
+            ModelInfo(
+                id = "anthropic.claude-instant-v1",
+                name = "Claude Instant",
+                description = "Fast, affordable model"
+            ),
+            ModelInfo(
+                id = "amazon.titan-text-express-v1",
+                name = "Titan Text G1 - Express",
+                description = "Amazon's flagship text generation model"
+            ),
+            ModelInfo(
+                id = "amazon.titan-text-lite-v1",
+                name = "Titan Text G1 - Lite",
+                description = "Lightweight text model"
+            ),
+            ModelInfo(
+                id = "ai21.j2-ultra-v1",
+                name = "Jurassic-2 Ultra",
+                description = "AI21 Labs' most powerful model"
+            ),
+            ModelInfo(
+                id = "ai21.j2-mid-v1",
+                name = "Jurassic-2 Mid",
+                description = "Balanced performance model"
+            ),
+            ModelInfo(
+                id = "cohere.command-text-v14",
+                name = "Command",
+                description = "Cohere's instruction-following model"
+            ),
+            ModelInfo(
+                id = "cohere.command-light-text-v14",
+                name = "Command Light",
+                description = "Fast and efficient model"
+            ),
+            ModelInfo(
+                id = "meta.llama2-13b-chat-v1",
+                name = "Llama 2 Chat 13B",
+                description = "Meta's fine-tuned chat model"
+            ),
+            ModelInfo(
+                id = "meta.llama2-70b-chat-v1",
+                name = "Llama 2 Chat 70B",
+                description = "Large parameter chat model"
+            )
+        )
+        return ModelFetchResult.Success(models)
     }
 
     private fun formatSize(bytes: Long): String {

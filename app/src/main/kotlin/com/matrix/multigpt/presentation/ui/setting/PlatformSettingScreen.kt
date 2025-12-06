@@ -80,7 +80,11 @@ fun PlatformSettingScreen(
                 .verticalScroll(scrollState)
         ) {
             val platform = platformState.firstOrNull { it.name == apiType }
-            val url = platform?.apiUrl ?: ModelConstants.getDefaultAPIUrl(apiType)
+            val url = if (apiType == ApiType.BEDROCK) {
+                "Auto-configured based on AWS region"
+            } else {
+                platform?.apiUrl ?: ModelConstants.getDefaultAPIUrl(apiType)
+            }
             val enabled = platform?.enabled == true
             val model = platform?.model
             val token = platform?.token
@@ -92,6 +96,7 @@ fun PlatformSettingScreen(
                 ApiType.GOOGLE -> ModelConstants.DEFAULT_PROMPT
                 ApiType.GROQ -> ModelConstants.DEFAULT_PROMPT
                 ApiType.OLLAMA -> ModelConstants.DEFAULT_PROMPT
+                ApiType.BEDROCK -> ModelConstants.DEFAULT_PROMPT
             }
 
             PreferenceSwitchWithContainer(
@@ -102,7 +107,7 @@ fun PlatformSettingScreen(
                 modifier = Modifier.height(64.dp),
                 title = stringResource(R.string.api_url),
                 description = url,
-                enabled = enabled && platform.name != ApiType.GOOGLE,
+                enabled = enabled && platform.name != ApiType.GOOGLE && platform.name != ApiType.BEDROCK,
                 onItemClick = settingViewModel::openApiUrlDialog,
                 showTrailingIcon = false,
                 showLeadingIcon = true,

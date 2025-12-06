@@ -14,7 +14,8 @@ fun getPlatformTitleResources(): Map<ApiType, String> = mapOf(
     ApiType.ANTHROPIC to stringResource(R.string.anthropic),
     ApiType.GOOGLE to stringResource(R.string.google),
     ApiType.GROQ to stringResource(R.string.groq),
-    ApiType.OLLAMA to stringResource(R.string.ollama)
+    ApiType.OLLAMA to stringResource(R.string.ollama),
+    ApiType.BEDROCK to stringResource(R.string.bedrock)
 )
 
 @Composable
@@ -23,7 +24,8 @@ fun getPlatformDescriptionResources(): Map<ApiType, String> = mapOf(
     ApiType.ANTHROPIC to stringResource(R.string.anthropic_description),
     ApiType.GOOGLE to stringResource(R.string.google_description),
     ApiType.GROQ to stringResource(R.string.groq_description),
-    ApiType.OLLAMA to stringResource(R.string.ollama_description)
+    ApiType.OLLAMA to stringResource(R.string.ollama_description),
+    ApiType.BEDROCK to stringResource(R.string.bedrock_description)
 )
 
 @Composable
@@ -32,7 +34,8 @@ fun getPlatformAPILabelResources(): Map<ApiType, String> = mapOf(
     ApiType.ANTHROPIC to stringResource(R.string.anthropic_api_key),
     ApiType.GOOGLE to stringResource(R.string.gemini_api_key),
     ApiType.GROQ to stringResource(R.string.groq_api_key),
-    ApiType.OLLAMA to stringResource(R.string.ollama_api_key)
+    ApiType.OLLAMA to stringResource(R.string.ollama_api_key),
+    ApiType.BEDROCK to stringResource(R.string.bedrock_credentials)
 )
 
 @Composable
@@ -41,7 +44,8 @@ fun getPlatformHelpLinkResources(): Map<ApiType, String> = mapOf(
     ApiType.ANTHROPIC to stringResource(R.string.anthropic_api_help),
     ApiType.GOOGLE to stringResource(R.string.google_api_help),
     ApiType.GROQ to stringResource(R.string.groq_api_help),
-    ApiType.OLLAMA to stringResource(R.string.ollama_api_help)
+    ApiType.OLLAMA to stringResource(R.string.ollama_api_help),
+    ApiType.BEDROCK to stringResource(R.string.bedrock_api_help)
 )
 
 @Composable
@@ -93,12 +97,33 @@ fun generateGroqModelList(models: LinkedHashSet<String>) = models.mapIndexed { i
 }
 
 @Composable
+fun generateBedrockModelList(models: LinkedHashSet<String>) = models.mapIndexed { index, model ->
+    val (name, description) = when (index) {
+        0 -> stringResource(R.string.claude_3_5_sonnet) to stringResource(R.string.claude_3_5_sonnet_description)
+        1 -> stringResource(R.string.claude_3_sonnet) to stringResource(R.string.claude_3_sonnet_description)
+        2 -> stringResource(R.string.claude_3_haiku) to stringResource(R.string.claude_3_haiku_description)
+        3 -> stringResource(R.string.claude_instant) to stringResource(R.string.claude_instant_description)
+        4 -> stringResource(R.string.titan_text_express) to stringResource(R.string.titan_text_express_description)
+        5 -> stringResource(R.string.titan_text_lite) to stringResource(R.string.titan_text_lite_description)
+        6 -> stringResource(R.string.jurassic_2_ultra) to stringResource(R.string.jurassic_2_ultra_description)
+        7 -> stringResource(R.string.jurassic_2_mid) to stringResource(R.string.jurassic_2_mid_description)
+        8 -> stringResource(R.string.command) to stringResource(R.string.command_description)
+        9 -> stringResource(R.string.command_light) to stringResource(R.string.command_light_description)
+        10 -> stringResource(R.string.llama_2_13b) to stringResource(R.string.llama_2_13b_description)
+        11 -> stringResource(R.string.llama_2_70b) to stringResource(R.string.llama_2_70b_description)
+        else -> "" to ""
+    }
+    APIModel(name, description, model)
+}
+
+@Composable
 fun getAPIModelSelectTitle(apiType: ApiType) = when (apiType) {
     ApiType.OPENAI -> stringResource(R.string.select_openai_model)
     ApiType.ANTHROPIC -> stringResource(R.string.select_anthropic_model)
     ApiType.GOOGLE -> stringResource(R.string.select_google_model)
     ApiType.GROQ -> stringResource(R.string.select_groq_model)
     ApiType.OLLAMA -> stringResource(R.string.select_ollama_model)
+    ApiType.BEDROCK -> stringResource(R.string.select_bedrock_model)
 }
 
 @Composable
@@ -108,6 +133,7 @@ fun getAPIModelSelectDescription(apiType: ApiType) = when (apiType) {
     ApiType.GOOGLE -> stringResource(R.string.select_google_model_description)
     ApiType.GROQ -> stringResource(R.string.select_groq_model_description)
     ApiType.OLLAMA -> stringResource(id = R.string.select_ollama_model_description)
+    ApiType.BEDROCK -> stringResource(R.string.select_bedrock_model_description)
 }
 
 @Composable
@@ -130,6 +156,7 @@ fun getPlatformSettingTitle(apiType: ApiType) = when (apiType) {
     ApiType.GOOGLE -> stringResource(R.string.google_setting)
     ApiType.GROQ -> stringResource(R.string.groq_setting)
     ApiType.OLLAMA -> stringResource(R.string.ollama_setting)
+    ApiType.BEDROCK -> stringResource(R.string.bedrock_setting)
 }
 
 @Composable
@@ -139,6 +166,7 @@ fun getPlatformSettingDescription(apiType: ApiType) = when (apiType) {
     ApiType.GOOGLE -> stringResource(R.string.platform_setting_description)
     ApiType.GROQ -> stringResource(R.string.platform_setting_description)
     ApiType.OLLAMA -> stringResource(R.string.platform_setting_description)
+    ApiType.BEDROCK -> stringResource(R.string.platform_setting_description)
 }
 
 @Composable
@@ -148,4 +176,5 @@ fun getPlatformAPIBrandText(apiType: ApiType) = when (apiType) {
     ApiType.GOOGLE -> stringResource(R.string.google_brand_text)
     ApiType.GROQ -> stringResource(R.string.groq_brand_text)
     ApiType.OLLAMA -> stringResource(R.string.ollama_brand_text)
+    ApiType.BEDROCK -> stringResource(R.string.bedrock_brand_text)
 }

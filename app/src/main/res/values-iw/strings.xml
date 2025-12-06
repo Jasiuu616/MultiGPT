@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="clear_token">נקה אסימון</string>
-    <string name="welcome_description">השתמש במודל שהכי מתאים לך.\nתשאל כל מה שאתה רוצה!</string>
+    <string name="welcome_description">התחבר ל-OpenAI, Claude, Gemini, AWS Bedrock ועוד.\nהכל מאפליקציה אחת חזקה.</string>
     <string name="app_name">MultiGPT</string>
     <string name="welcome_title">עוזר הבינה המלאכותית הטוב ביותר\nשאתה יכול לקבל\nבסמארטפון שלך.</string>
     <string name="get_started">התחל</string>
@@ -71,7 +71,6 @@
     <string name="feedback_description">אנחנו פתוחים לכל סוגי משוב!</string>
     <string name="license_icon">סמל רישיון</string>
     <string name="github_icon">סמל GitHub</string>
-    <string name="f_droid_icon">סמל F-Droid</string>
     <string name="play_store_icon">סמל חנות Play</string>
     <string name="api_url">כתובת ה-API</string>
     <string name="url_icon">סמל כתובת אתר</string>
@@ -153,4 +152,26 @@
     <string name="api_address_description">אנא הזן את כתובת ה-API של Ollama שלך כולל מספר הפורט. האפליקציה תשתמש בנקודת קצה v1/chat/completions, אז אנא הזן רק את החלק הקדמי של הכתובת המלאה. הכתובת חייבת להסתיים ב-\'/\'. למשל) http://192.168.1.100:11434/</string>
     <string name="select_groq_model_description">אנא בחר את מודל הצ\'אט של Groq. אם אתה רוצה דגמים שאינם ברשימה, בדוק את אתר התיעוד של Groq API והזן שם של מודל זמין.</string>
     <string name="default_mode">ברירת מחדל</string>
+    <string name="bedrock_description">מודלים יסודיים מ-Amazon, Anthropic, AI21 ואחרים.</string>
+    <string name="bedrock_credentials">אישורי AWS</string>
+    <string name="bedrock_setting">הגדרות AWS Bedrock</string>
+    <string name="select_bedrock_model">בחר מודל AWS Bedrock</string>
+    <string name="select_bedrock_model_description">בחר ממודלי היסוד הזמינים ב-AWS Bedrock. וודא שיש לך גישה למודל שנבחר בחשבון AWS שלך.</string>
+    <string name="claude_instant_description">מודל מהיר ובמחיר סביר למשימות פשוטות.</string>
+    <string name="titan_text_express_description">מודל יצירת הטקסט המוביל של Amazon.</string>
+    <string name="titan_text_lite_description">מודל טקסט קל למשימות פשוטות.</string>
+    <string name="jurassic_2_ultra_description">מודל השפה החזק ביותר של AI21 Labs.</string>
+    <string name="jurassic_2_mid_description">מודל טקסט בעל ביצועים מאוזנים.</string>
+    <string name="command_description">מודל לביצוע הוראות של Cohere.</string>
+    <string name="command_light_description">מודל שפה מהיר ויעיל.</string>
+    <string name="llama_2_13b_description">מודל צ\'אט מכוון של Meta.</string>
+    <string name="llama_2_70b_description">מודל צ\'אט עם פרמטרים גדולים ויכולת גבוהה.</string>
+    <string name="aws_access_key_id">מזהה מפתח גישה AWS</string>
+    <string name="aws_secret_access_key">מפתח גישה סודי AWS</string>
+    <string name="aws_region">אזור AWS</string>
+    <string name="aws_session_token">אסימון סשן AWS</string>
+    <string name="aws_session_token_optional">אופציונלי לאישורים זמניים</string>
+    <string name="aws_session_token_help">נדרש רק לאישורי AWS זמניים (STS)</string>
+    <string name="aws_region_help">בחר את אזור AWS שבו Bedrock זמין (למשל us-east-1, us-west-2)</string>
+    <string name="bedrock_credentials_description">הזן את אישורי AWS שלך לגישה למודלי היסוד של Bedrock. הם מאוחסנים בבטחה רק במכשיר שלך.</string>
 </resources>

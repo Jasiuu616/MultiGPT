@@ -279,6 +279,7 @@ fun ChatScreen(
                                 ApiType.GOOGLE -> googleMessage
                                 ApiType.GROQ -> groqMessage
                                 ApiType.OLLAMA -> ollamaMessage
+                                ApiType.BEDROCK -> anthropicMessage // Using anthropicMessage as placeholder for now
                             }
 
                             val loadingState = when (apiType) {
@@ -287,6 +288,7 @@ fun ChatScreen(
                                 ApiType.GOOGLE -> googleLoadingState
                                 ApiType.GROQ -> groqLoadingState
                                 ApiType.OLLAMA -> ollamaLoadingState
+                                ApiType.BEDROCK -> anthropicLoadingState // Using anthropicLoadingState as placeholder for now
                             }
 
                             OpponentChatBubble(

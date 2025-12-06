@@ -2,7 +2,7 @@
     <string name="app_name">MultiGPT</string>
     <string name="gpt_mobile_introduction_logo">MultiGPT Tanıtım Logosu</string>
     <string name="welcome_title">Akıllı telefonunuzda\nalabileceğiniz en iyi\nyapay zeka asistanı.</string>
-    <string name="welcome_description">Size en uygun modeli\nkullanın. İstediğiniz her şeyi sorun!</string>
+    <string name="welcome_description">OpenAI, Claude, Gemini, AWS Bedrock ve daha fazlasına bağlanın.\nTek güçlü uygulamadan hepsi.</string>
     <string name="get_started">Başla</string>
     <string name="platform_select_description">Kullanmak istediğiniz platformu seçin. Bunu daha sonra ayarlardan değiştirebilirsiniz. Daha fazla platform desteklenecek.</string>
     <string name="sample_item_title">Öğe 1</string>
@@ -118,7 +118,6 @@
     <string name="version">Sürüm</string>
     <string name="license">Lisans</string>
     <string name="github" translatable="false">GitHub</string>
-    <string name="f_droid" translatable="false">F-Droid</string>
     <string name="play_store" translatable="false">Play Store</string>
     <string name="feedback">Geri Bildirim</string>
     <string name="license_description">Açık Kaynak Lisansları</string>
@@ -127,13 +126,7 @@
     <string name="license_icon">Lisans Simgesi</string>
     <string name="feedback_icon">Geri Bildirim Simgesi</string>
     <string name="github_icon">GitHub Simgesi</string>
-    <string name="f_droid_icon">F-Droid Simgesi</string>
     <string name="play_store_icon">Play Store Simgesi</string>
-    <string name="github_link" translatable="false">https://github.com/Taewan-P/gpt_mobile</string>
-    <string name="f_droid_link" translatable="false">https://f-droid.org/packages/dev.chungjungsoo.gptmobile/</string>
-    <string name="play_store_link" translatable="false">https://play.google.com/store/apps/details?id=dev.chungjungsoo.gptmobile</string>
-    <string name="bug_report_link" translatable="false">https://github.com/Taewan-P/gpt_mobile/issues/new/choose</string>
-    <string name="feedback_link" translatable="false">https://github.com/Taewan-P/gpt_mobile/discussions/new/choose</string>
     <string name="api_url">API URL’si</string>
     <string name="url_icon">URL Simgesi</string>
     <string name="invalid_api_url">Lütfen geçerli bir URL girin.</string>
@@ -190,5 +183,27 @@
     <string name="edit">Düzenle</string>
     <string name="edit_question">Kullanıcı Mesajını Düzenle</string>
     <string name="user_message">Kullanıcı Mesajı</string>
+    <string name="bedrock_description">Amazon, Anthropic, AI21 ve diğerlerinden temel modeller.</string>
+    <string name="bedrock_credentials">AWS Kimlik Bilgileri</string>
+    <string name="bedrock_setting">AWS Bedrock Ayarları</string>
+    <string name="select_bedrock_model">AWS Bedrock Modelini Seçin</string>
+    <string name="select_bedrock_model_description">AWS Bedrock\'ta mevcut temel modellerden seçin. AWS hesabınızda seçilen modele erişiminizin olduğundan emin olun.</string>
+    <string name="claude_instant_description">Basit görevler için hızlı, uygun fiyatlı model.</string>
+    <string name="titan_text_express_description">Amazon\'un amiral gemisi metin oluşturma modeli.</string>
+    <string name="titan_text_lite_description">Basit görevler için hafif metin modeli.</string>
+    <string name="jurassic_2_ultra_description">AI21 Labs\'ın en güçlü dil modeli.</string>
+    <string name="jurassic_2_mid_description">Dengeli performansa sahip metin modeli.</string>
+    <string name="command_description">Cohere\'in talimat takip eden modeli.</string>
+    <string name="command_light_description">Hızlı ve verimli dil modeli.</string>
+    <string name="llama_2_13b_description">Meta\'nın ince ayarlı sohbet modeli.</string>
+    <string name="llama_2_70b_description">Yüksek yetenekli büyük parametre sohbet modeli.</string>
+    <string name="aws_access_key_id">AWS Erişim Anahtarı ID\'si</string>
+    <string name="aws_secret_access_key">AWS Gizli Erişim Anahtarı</string>
+    <string name="aws_region">AWS Bölgesi</string>
+    <string name="aws_session_token">AWS Oturum Anahtarı</string>
+    <string name="aws_session_token_optional">Geçici kimlik bilgileri için isteğe bağlı</string>
+    <string name="aws_session_token_help">Yalnızca geçici AWS kimlik bilgileri (STS) için gerekli</string>
+    <string name="aws_region_help">Bedrock\'un mevcut olduğu AWS bölgesini seçin (ör. us-east-1, us-west-2)</string>
+    <string name="bedrock_credentials_description">Bedrock temel modellerine erişmek için AWS kimlik bilgilerinizi girin. Yalnızca cihazınızda güvenli bir şekilde saklanırlar.</string>
     <string name="export_chat">Sohbeti Dışa Aktar</string>
 </resources>

@@ -30,6 +30,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.matrix.multigpt.R
 import com.matrix.multigpt.data.dto.Platform
 import com.matrix.multigpt.data.model.ApiType
+import com.matrix.multigpt.presentation.common.BedrockCredentialsField
 import com.matrix.multigpt.presentation.common.PrimaryLongButton
 import com.matrix.multigpt.presentation.common.Route
 import com.matrix.multigpt.presentation.common.TokenInputField
@@ -127,14 +128,24 @@ fun TokenInput(
         // Ollama doesn't currently support api keys
         platforms.filter { it.selected && it.name != ApiType.OLLAMA }.forEachIndexed { i, platform ->
             val isLast = platforms.filter { it.selected && it.name != ApiType.OLLAMA }.size - 1 == i
-            TokenInputField(
-                value = platform.token ?: "",
-                onValueChange = { onChangeEvent(platform, it) },
-                onClearClick = { onClearEvent(platform) },
-                label = labels[platform.name]!!,
-                keyboardOptions = KeyboardOptions(imeAction = if (isLast) ImeAction.Done else ImeAction.Next),
-                helpLink = helpLinks[platform.name]!!
-            )
+            
+            if (platform.name == ApiType.BEDROCK) {
+                BedrockCredentialsField(
+                    modifier = Modifier.padding(horizontal = 20.dp, vertical = 16.dp),
+                    value = platform.token ?: "",
+                    onValueChange = { onChangeEvent(platform, it) },
+                    onClearClick = { onClearEvent(platform) }
+                )
+            } else {
+                TokenInputField(
+                    value = platform.token ?: "",
+                    onValueChange = { onChangeEvent(platform, it) },
+                    onClearClick = { onClearEvent(platform) },
+                    label = labels[platform.name]!!,
+                    keyboardOptions = KeyboardOptions(imeAction = if (isLast) ImeAction.Done else ImeAction.Next),
+                    helpLink = helpLinks[platform.name]!!
+                )
+            }
         }
     }
 }

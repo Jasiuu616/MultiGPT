@@ -8,7 +8,7 @@
     <string name="anthropic_description">وُلد Claude هنا.</string>
     <string name="google_description">Gemini في طريقه.</string>
     <string name="welcome_title">أفضل مساعد ذكاء اصطناعي\nيمكنك الحصول عليه في هاتفك\nالذكي.</string>
-    <string name="welcome_description">استخدم النموذج الذي يناسبك\nأكثر. اسأل أي شيء تريده!</string>
+    <string name="welcome_description">اتصل بـ OpenAI و Claude و Gemini و AWS Bedrock والمزيد.\nالكل من تطبيق واحد قوي.</string>
     <string name="sample_item_title">العنصر 1</string>
     <string name="sample_item_description">وصف العنصر</string>
     <string name="next">التالي</string>
@@ -49,7 +49,6 @@
     <string name="about_description">الإصدار، الترخيص، الملاحظات</string>
     <string name="version">الإصدار</string>
     <string name="github_icon">أيقونة GitHub</string>
-    <string name="f_droid_icon">أيقونة F-Droid</string>
     <string name="play_store_icon">أيقونة متجر Play</string>
     <string name="ollama_setting">إعدادات Ollama</string>
     <string name="select_ollama_model_description">يرجى تحديد نموذج Ollama. نظرًا لوجود العديد من النماذج والعلامات المدعومة، يمكنك تخصيص قيمة النموذج. تأكد من أن نقطة النهاية تدعم النموذج بالفعل وقم بتشغيله. خلاف ذلك، لن يولد استجابة.</string>
@@ -152,4 +151,26 @@
     <string name="default_mode">افتراضي</string>
     <string name="ai_generated">تم إنشاؤه بواسطة الذكاء الاصطناعي (تجريبي)</string>
     <string name="update">تحديث</string>
+    <string name="bedrock_description">نماذج الأسس من Amazon و Anthropic و AI21 والمزيد.</string>
+    <string name="bedrock_credentials">بيانات اعتماد AWS</string>
+    <string name="bedrock_setting">إعدادات AWS Bedrock</string>
+    <string name="select_bedrock_model">حدد نموذج AWS Bedrock</string>
+    <string name="select_bedrock_model_description">اختر من نماذج الأسس المتاحة على AWS Bedrock. تأكد من أن لديك الوصول إلى النموذج المحدد في حساب AWS الخاص بك.</string>
+    <string name="claude_instant_description">نموذج سريع وبأسعار معقولة للمهام البسيطة.</string>
+    <string name="titan_text_express_description">نموذج إنشاء النصوص الرائد من Amazon.</string>
+    <string name="titan_text_lite_description">نموذج نصوص خفيف للمهام البسيطة.</string>
+    <string name="jurassic_2_ultra_description">نموذج اللغة الأكثر قوة من AI21 Labs.</string>
+    <string name="jurassic_2_mid_description">نموذج نصوص بأداء متوازن.</string>
+    <string name="command_description">نموذج Cohere الذي يتبع التعليمات.</string>
+    <string name="command_light_description">نموذج لغوي سريع وفعال.</string>
+    <string name="llama_2_13b_description">نموذج الدردشة المُحسَّن من Meta.</string>
+    <string name="llama_2_70b_description">نموذج دردشة كبير المعاملات بقدرة عالية.</string>
+    <string name="aws_access_key_id">معرف مفتاح الوصول AWS</string>
+    <string name="aws_secret_access_key">مفتاح الوصول السري AWS</string>
+    <string name="aws_region">منطقة AWS</string>
+    <string name="aws_session_token">رمز جلسة AWS</string>
+    <string name="aws_session_token_optional">اختياري لبيانات الاعتماد المؤقتة</string>
+    <string name="aws_session_token_help">مطلوب فقط لبيانات اعتماد AWS المؤقتة (STS)</string>
+    <string name="aws_region_help">اختر منطقة AWS حيث Bedrock متاح (مثل us-east-1، us-west-2)</string>
+    <string name="bedrock_credentials_description">أدخل بيانات اعتماد AWS الخاصة بك للوصول إلى نماذج أسس Bedrock. يتم تخزينها بأمان على جهازك فقط.</string>
 </resources>

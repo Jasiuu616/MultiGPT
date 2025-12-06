@@ -40,6 +40,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.matrix.multigpt.R
 import com.matrix.multigpt.data.ModelConstants.anthropicModels
+import com.matrix.multigpt.data.ModelConstants.bedrockModels
 import com.matrix.multigpt.data.ModelConstants.googleModels
 import com.matrix.multigpt.data.ModelConstants.groqModels
 import com.matrix.multigpt.data.ModelConstants.openaiModels
@@ -49,6 +50,7 @@ import com.matrix.multigpt.data.model.ApiType
 import com.matrix.multigpt.presentation.common.PrimaryLongButton
 import com.matrix.multigpt.presentation.common.RadioItem
 import com.matrix.multigpt.util.generateAnthropicModelList
+import com.matrix.multigpt.util.generateBedrockModelList
 import com.matrix.multigpt.util.generateGoogleModelList
 import com.matrix.multigpt.util.generateGroqModelList
 import com.matrix.multigpt.util.generateOpenAIModelList
@@ -101,6 +103,7 @@ fun SelectModelScreen(
         ApiType.GOOGLE -> generateGoogleModelList(models = googleModels)
         ApiType.GROQ -> generateGroqModelList(models = groqModels)
         ApiType.OLLAMA -> listOf()
+        ApiType.BEDROCK -> generateBedrockModelList(models = bedrockModels)
     }
     
     val availableModels = displayModels ?: fallbackModels
@@ -114,6 +117,7 @@ fun SelectModelScreen(
                     ApiType.GOOGLE -> 1
                     ApiType.GROQ -> 0
                     ApiType.OLLAMA -> 0
+                    ApiType.BEDROCK -> 0
                 }
             )
         }
